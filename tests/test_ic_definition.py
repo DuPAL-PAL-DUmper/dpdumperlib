@@ -21,3 +21,12 @@ def test_27C2001_Definition(ic_definition_27C2001):
     assert len(ic_definition_27C2001.act_l_enable) == 2
 
     assert ic_definition_27C2001.hw_model == 3
+
+def test_PAL12x6_Definition(ic_definition_PAL12x6):
+    assert ic_definition_PAL12x6.ic_type == ICType.ROM
+    assert ic_definition_PAL12x6.name == 'PAL12x6'
+
+    assert len(ic_definition_PAL12x6.address) == 12 # 12 input lines in this IC
+    assert len(ic_definition_PAL12x6.data) == 6 # and 6 data lines
+    
+    assert ic_definition_PAL12x6.hw_model == 3
