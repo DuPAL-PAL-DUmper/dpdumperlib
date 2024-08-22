@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dpdumperlib"
-version = "0.0.1"
+version = "0.0.2"
 description = "Library with some utility code for the dpdumper tool"
 authors = [
    { name = "Fabio Battaglia", email = "hkzlabnet@gmail.com" }
@@ -19,7 +19,11 @@ requires-python = ">=3.12"
 dependencies = []
 
 [tool.setuptools]
-packages = [ "dpdumperlib", "dpdumperlib.ic" ]
+packages = [
+    "dpdumperlib",
+    "dpdumperlib.ic",
+    "dpdumperlib.io"
+ ]
 py-modules = [ "__init__" ]
 
 [project.urls]
