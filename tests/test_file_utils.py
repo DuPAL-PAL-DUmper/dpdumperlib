@@ -1,4 +1,4 @@
-"""Tests for IC definitions"""
+"""Tests for file utils"""
 
 # pylint: disable=wrong-import-position,wrong-import-order
 
