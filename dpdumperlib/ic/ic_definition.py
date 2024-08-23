@@ -20,6 +20,11 @@ class ICDefinition:
     act_h_write: list[int]
     act_l_write: list[int]
     adapter_hi_pins: list[int]
+
+    # Non-remapped arrays
+    nr_address: list[int] 
+    nr_data: list[int]
+
     hw_model: int
     adapter_notes: str | None = None
 
@@ -51,6 +56,10 @@ class ICDefinition:
         self.hw_model = hw_model
         self.adapter_notes = adapter_notes
         self.adapter_hi_pins = adapter_hi_pins
+
+        # We keep these as non-remapped for ease of use down the line
+        self.nr_address = address
+        self.nr_data = data
 
         # Remap pins on the ZIF socket
         self.address = self._remap_pin_array(zif_map, address)
