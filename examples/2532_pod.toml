@@ -1,0 +1,31 @@
+# Example of a TOML definition for a 2532
+
+name = "2532"
+type = "ROM"
+
+[pinout]
+# List all the pins of the IC, from 1 onward, as mapped on the ZIF42 socket of the dupico
+# note that, in this list, 21 is a placeholder for GND, 42 a placeholder for a power source (which could be 5V or different).
+ZIF_map = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 21, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 42]
+
+# The address array defines the association of every address and its pin, starting at A0
+address = [8, 7, 6, 5, 4, 3, 2, 1, 23, 22, 19, 18]
+# Same a1s above, data starts at D0
+data = [9, 10, 11, 13, 14, 15, 16, 17]
+# All the pins that must be pulled high to enable this IC
+H_enable = [21]
+# All the pins that must be pulled low to enable this IC
+L_enable = [20] # PD
+# All the pins that must be pulled high to write to this IC (even though we don't support EPROM programming, we need to disable writing mode when reading)
+H_write = [] # We have none
+# All the pins that must be pulled low to enable writing
+L_write = []
+
+[adapter]
+# pins that need to be forced high to read this in the adapter
+hi_pins = [22]
+# Notes on the adapter necessary to read this IC
+notes = "Insert the pod in the topmost position on the ZIF42, then insert the chip at the bottom of the 32 pin socket in the pod."
+
+[requirements]
+hardware = 3
