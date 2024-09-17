@@ -1,4 +1,4 @@
-# Example of a TOML definition for a DS1644
+# Example of a TOML definition for a DS1644, read in EPROM_01 pod
 
 name = "DS1644"
 
@@ -26,7 +26,7 @@ L_write = [27] # /WE
 # pins that need to be forced high to read this in the adapter
 hi_pins = []
 # Notes on the adapter necessary to read this IC
-notes = "Insert the pod in the topmost position on the ZIF42, then insert the chip at the bottom of the 32 pin socket in the pod."
+notes = "Insert the EPROM_01 pod in the topmost position on the ZIF42, then insert the chip at the bottom of the 32 pin socket in the pod."
 
 [requirements]
 hardware = 3
