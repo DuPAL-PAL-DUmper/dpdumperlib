@@ -1,10 +1,11 @@
 """This file contains functions to aid with common file operations"""
 
 import os
-from typing import List
+from typing import List, Literal
 
-def load_file_data(in_file_path: str, bytes_per_entry: int) -> List[int]:
+def load_file_data(in_file_path: str, bytes_per_entry: int, reverse_byte_order: bool = False) -> List[int]:
     data_array: List[int] = []
+    endianness: Literal['big', 'little'] = 'little' if reverse_byte_order else 'big' 
 
     with open(in_file_path, "rb") as f:
         # Read the file size
@@ -18,6 +19,6 @@ def load_file_data(in_file_path: str, bytes_per_entry: int) -> List[int]:
         # Push data in an array
         data: bytes
         while (data := f.read(bytes_per_entry)):
-            data_array.append(int.from_bytes(data, byteorder='big', signed=False))
+            data_array.append(int.from_bytes(data, byteorder=endianness, signed=False))
 
     return data_array

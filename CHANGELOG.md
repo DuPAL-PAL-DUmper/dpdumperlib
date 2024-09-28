@@ -1,6 +1,10 @@
 # Changelog
 Changelog for dpdumperlib
 
+## [0.0.4] - 2024-09-28
+### Added
+- Parameter to set endianness of data loaded from file
+
 ## [0.0.3] - 2024-08-22
 ### Added
 - Keep a copy of non-remapped address and data arrays in the ICDefinition

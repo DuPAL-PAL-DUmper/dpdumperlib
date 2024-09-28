@@ -22,6 +22,11 @@ def test_loading_1K(filename_randomdata_1k):
 
     data_8B: List[int] = FileUtils.load_file_data(filename_randomdata_1k, 8)
     assert(len(data_8B) == 128)
+    assert(data_8B[0].to_bytes(length=8, byteorder='big', signed=False) == b'\xB2\x20\xA5\x60\x35\x3B\x63\x6D')
+    
+    data_8BLE: List[int] = FileUtils.load_file_data(filename_randomdata_1k, 8, reverse_byte_order=True)
+    assert(len(data_8BLE) == 128)
+    assert(data_8BLE[0].to_bytes(length=8, byteorder='little', signed=False) == b'\xB2\x20\xA5\x60\x35\x3B\x63\x6D')
 
     # Size of file is not divisible by 3
     with pytest.raises(Exception):
