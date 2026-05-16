@@ -1,0 +1,23 @@
+# Brutus28 definition for a 20-pin PAL12x6-class combinatorial PAL/GAL.
+#
+# A 20-pin DIP part in the Brutus28 DIP socket maps pins 1-10 directly and
+# pins 11-20 onto Brutus socket pins 19-28.
+
+name = "PAL12x6 on Brutus28"
+type = "ROM"
+
+[pinout]
+ZIF_map = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+address = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 19]
+data = [13, 14, 15, 16, 17, 18]
+H_enable = []
+L_enable = []
+H_write = []
+L_write = []
+
+[adapter]
+hi_pins = []
+notes = "Insert the 20-pin PAL/GAL in the Brutus28 DIP socket with pin 1 aligned to socket pin 1. Set the VCC/GND jumpers for the device before reading."
+
+[requirements]
+hardware = 28

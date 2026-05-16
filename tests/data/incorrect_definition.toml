@@ -1,0 +1,17 @@
+name = "Incorrect"
+type = "ROM"
+
+[pinout]
+ZIF_map = [1, 2, 3, 4]
+address = [1, 2]
+data = [2, 3]
+H_enable = []
+L_enable = []
+H_write = []
+L_write = []
+
+[adapter]
+hi_pins = []
+
+[requirements]
+hardware = 3
